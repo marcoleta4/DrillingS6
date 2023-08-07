@@ -1,0 +1,32 @@
+{% extends "./base.html" %}
+
+{% block title %} Edicion Vehiculo {% endblock %}
+
+{% block body %}
+<div class="header-box">
+  <h1 class="transformers-text">Instrucciones de Uso</h1>
+</div>
+<p>Bienvenido al Drilling Final S6 . Aquí te proporcionamos detalles sobre el acceso y permisos de diferentes usuarios:</p>
+
+<div class="header-box">
+  <h5 class="transformers-text">Acceso Restringido</h5>
+</div>
+<p>Si no estás logueado, podrás ver únicamente la página de inicio.</p>
+
+<div class="header-box">
+  <h5 class="transformers-text">Acceso de Usuarios Específicos</h5>
+</div>
+<p>Usuarios específicos tienen diferentes niveles de acceso:</p>
+<ul>
+    <li>Usuarios nuevos podrán ver Inicio y Listar JS, además de tener permiso para visualizar el catálogo .</li>
+  <li>Usuario: admin | Contraseña: admin | Acceso total a todas las funciones.</li>
+  <li>Usuario: admin2 | Contraseña: admin2 | Acceso a funciones específicas como Agregar y Listar (staf).</li>
+  <li>Usuario: admin3 | Contraseña: admin3 | Acceso a funciones específicas como Listar (no staf).</li>
+  
+</ul>
+
+<div class="header-box">
+  <h1 class="transformers-text">¿Listo para Empezar?</h1>
+</div>
+<p>Regístrate o inicia sesión para disfrutar de todas las funciones disponibles y participar en la comunidad.</p>
+{% endblock %}

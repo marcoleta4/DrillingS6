@@ -1,0 +1,28 @@
+{% extends "./base  .html" %}
+
+{% block title %} Registro {% endblock %}
+
+{% block body %}
+
+{% load crispy_forms_tags %}
+<!--Registro-->
+
+<div class="container-fluid py-5">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <h1>Registro</h1>
+            <form method="POST">
+                {% csrf_token %}
+                {{ register_form|crispy }}
+                <button class="btn btn-primary" type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+    <p class="text-center">
+        Si tienes actualmente una cuenta, inicie sesión en
+        <a href="/login" style="color: #ffffff;">login</a>
+    </p>
+</div>
+
+
+{% endblock %}

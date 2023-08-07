@@ -1,0 +1,42 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %} Lista de Vehículos {% endblock %}
+
+{% block body %}
+<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <h1>Listado de Automóviles</h1>
+    <div class="table-responsive py-2">
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Serial Carrocería</th>
+                    <th>Serial Motor</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
+                    <!-- <th colspan="2">Opciones</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for x in autos %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{x.marca}}</td>
+                    <td>{{x.modelo}}</td>
+                    <td>{{x.serialCarroceria}}</td>
+                    <td>{{x.serialMotor}}</td>
+                    <td>{{x.categoria}}</td>
+                    <td>{{x.precio}}</td>
+                    <!--
+                    <td><a href="edicionauto/{{x.id}}" class="btn btn-info">Editar</a></td>
+                    <td><a href="eliminarauto/{{x.id}}" class="btn btn-danger">Eliminar</a></td>
+                    -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

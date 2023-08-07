@@ -1,0 +1,51 @@
+{% extends "./base.html" %}
+
+{% block title %} Edicion Vehiculo {% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Edicion Vehiculos</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/add/editarauto/{{auto.id}}/" method="POST">{% csrf_token %}
+                    <div class="form-group">
+                        <select id="selectMarca" name="selectMarca" class="form-control">
+                            <option value="{{auto.marca}}">{{auto.marca}}</option>
+                            <option value="Fiat">Fiat</option>
+                            <option value="Ford">Ford</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="Chevrolet">Chevrolet</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtModelo" name="txtModelo" value="{{auto.modelo}}" class="form-control" placeholder="Modelo" minlength="1" maxlength="100" required> 
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtSerialCarroceria" name="txtSerialCarroceria" value="{{auto.serialCarroceria}}" class="form-control" placeholder="Serial Carroceria" minlength="1" maxlength="50" required> 
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtSerialMotor" name="txtSerialMotor" value="{{auto.serialMotor}}" class="form-control" placeholder="Serial Motor" minlength="1" maxlength="50" required> 
+                    </div>
+                    <!--categoria-->
+                    <div class="form-group">
+                        <select id="selectCategoria" name="selectCategoria" class="form-control">
+                            <option value="{{auto.categoria}}">{{auto.categoria}}</option>
+                            <option value="Particular">Particular</option>
+                            <option value="Transporte">Transporte</option>
+                            <option value="Carga">Carga</option>
+                        </select>
+                    </div>                         
+                    
+                    <div class="form-group">
+                        <input type="text" id="txtPrecio" name="txtPrecio" value="{{auto.precio}}" class="form-control" placeholder="Precio" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block text-white btnEdicion">Editar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

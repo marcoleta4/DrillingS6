@@ -1,0 +1,71 @@
+/* Fondo con degradado de colores cálidos */
+body {
+  background: #ffcc66;  /* Fallback color for old browsers */
+  background: -webkit-linear-gradient(to right, #ffcc66, #ff6b6b, #ffb347);  
+  background: linear-gradient(to right, #ffcc66, #ff6b6b, #ffb347); 
+}
+
+/* Color de texto para el registro */
+#hint_id_username,
+#hint_id_password1,
+#hint_id_password2 {
+  color: #6c757d; /* Tono oscuro para el texto */
+}
+
+/* Espaciado del texto en la barra de navegación */
+.navbar-brand {
+  margin-left: 2%;
+}
+.navbar-container {
+  margin-left: 4%;
+}
+
+/* Estilo de fuente */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Formato de tablas */
+th,
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Estilo centrado para títulos de tablas en JavaScript */
+.centered {
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+/* Estilo de botones */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn:hover {
+  background-color: #ff5733;
+}
+
+/* Estilo de imágenes */
+.img-thumbnail {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Efectos de enlace */
+a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #2980b9;
+}

@@ -1,0 +1,36 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %} Lista JS {% endblock %}
+{% block JS %}{% static 'js/listarjs.js' %}{% endblock %}
+{% block body %}
+        
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="table-responsive">
+                    <table id="datatable-autos" class="table">
+                        <caption>
+                            Django + Datatable.js
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th class="centered">#</th>
+                                <th class="centered">Marca</th>
+                                <th class="centered">Modelo</th>  
+                                <th class="centered">Serial Carroceria</th>  
+                                <th class="centered">Serial Motor</th>  
+                                <th class="centered">Categoría</th>  
+                                <th class="centered">Precio</th>  
+                                <th class="centered">Condición de Precio</th>  
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody_autos"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
+
+

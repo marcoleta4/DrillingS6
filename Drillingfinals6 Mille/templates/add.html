@@ -1,0 +1,87 @@
+{% extends "./base.html" %}
+{% load static %}
+{% load humanize %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% block title %} Agregar Vehículos {% endblock %}
+{% block JS %}{% static 'js/auto.js' %}{% endblock %}
+
+{% block body %}
+<div class="row">
+    <!--tabla-->
+    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+        <h1>Listado de Automóviles</h1>
+        <div class="table-responsive py-2">
+            <table class="table table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Serial Carrocería</th>
+                        <th>Serial Motor</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th colspan="2">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for x in autos %}
+                    <tr>
+                        <td>{{x.marca}}</td>
+                        <td>{{x.modelo}}</td>
+                        <td>{{x.serialCarroceria}}</td>
+                        <td>{{x.serialMotor}}</td>
+                        <td>{{x.categoria}}</td>
+                        <td>{{ x.precio|floatformat|intcomma }}</td>
+                        <td><a href="edicionauto/{{x.id}}" class="btn btn-info"><i class="fa-solid fa-pencil"></i></a></td>
+                        <td><a href="eliminarauto/{{x.id}}" class="btn btn-danger btnEliminacion"><i class="fa-regular fa-trash-can"></i></a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+        <h2>Agregar Vehículos</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/registrarauto/" method="POST">{% csrf_token %}
+                    <div class="form-group">
+                        <select id="selectMarca" name="selectMarca" class="form-control">
+                            <option value="" disabled selected>Marca</option>
+                            <option value="Fiat">Fiat</option>
+                            <option value="Ford">Ford</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="Chevrolet">Chevrolet</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtModelo" name="txtModelo" class="form-control" placeholder="Modelo" minlength="1" maxlength="100" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtSerialCarroceria" name="txtSerialCarroceria" class="form-control" placeholder="Serial Carrocería" minlength="1" maxlength="50" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtSerialMotor" name="txtSerialMotor" class="form-control" placeholder="Serial Motor" minlength="1" maxlength="50" required>
+                    </div>
+                    <!--Categoría-->
+                    <div class="form-group">
+                        <select id="selectCategoria" name="selectCategoria" class="form-control">
+                            <option value="" disabled selected>Categoría</option>
+                            <option value="Particular">Particular</option>
+                            <option value="Transporte">Transporte</option>
+                            <option value="Carga">Carga</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtPrecio" name="txtPrecio" class="form-control" placeholder="Precio" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block text-white">Agregar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

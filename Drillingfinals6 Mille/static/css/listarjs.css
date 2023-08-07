@@ -1,0 +1,11 @@
+
+    /* estilo de letras */
+    body {
+        font-family: 'Akshar', sans-serif;
+    }
+
+    /* centrado titulos tabla js */
+    .centered {
+        text-align: center !important;
+        vertical-align: middle !important;
+    }
